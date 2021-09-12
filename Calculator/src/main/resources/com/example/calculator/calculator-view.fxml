@@ -9,7 +9,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="242.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="242.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="com.example.calculator.fxController">
   <children>
     <Pane prefHeight="41.0" prefWidth="223.0" />
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="250.0" VBox.vgrow="ALWAYS">
@@ -19,19 +20,19 @@
             <Font name="System Bold" size="14.0" />
           </font>
         </Label>
-        <Button fx:id="button0" layoutX="40.0" layoutY="104.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" text="0" />
-        <Button fx:id="button1" layoutX="40.0" layoutY="161.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" text="1" />
-        <Button fx:id="button2" layoutX="40.0" layoutY="215.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" text="2" />
-        <Button fx:id="button3" layoutX="40.0" layoutY="271.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" text="3" />
-        <Button fx:id="toggleUnitButton" layoutX="38.0" layoutY="70.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" text="Toggle Unit" />
-        <Button layoutX="39.0" layoutY="331.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="171.0" text="Calculate" />
+        <Button fx:id="button0" layoutX="40.0" layoutY="104.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" text="0" onAction="#button0Clicked"/>
+        <Button fx:id="button1" layoutX="40.0" layoutY="161.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" text="1" onAction="#button1Clicked"/>
+        <Button fx:id="button2" layoutX="40.0" layoutY="215.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" text="2" onAction="#button2Clicked"/>
+        <Button fx:id="button3" layoutX="40.0" layoutY="271.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" text="3" onAction="#button3Clicked"/>
+        <Button fx:id="toggleUnitButton" layoutX="38.0" layoutY="70.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" text="Toggle Unit" onAction="#toggleButtonClicked"/>
+        <Button layoutX="39.0" layoutY="331.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="171.0" text="Calculate" onAction="#calculateButtonClicked"/>
         <Separator layoutX="6.0" layoutY="60.0" prefHeight="2.0" prefWidth="231.0" />
-        <Button fx:id="additionButton" layoutX="100.0" layoutY="104.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" text="+" />
-        <Button fx:id="subtractionButton" layoutX="100.0" layoutY="161.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" text="-" />
-        <Button fx:id="divisionButton" layoutX="159.0" layoutY="104.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" text="÷" />
-        <Button fx:id="multiplicationButton" layoutX="159.0" layoutY="161.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" text="x" textFill="#696868" />
-        <Button fx:id="squaredbutton" layoutX="99.0" layoutY="271.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="110.0" text="^2" />
-        <Button fx:id="squareRootButton" layoutX="99.0" layoutY="215.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="110.0" text="√" />
+        <Button fx:id="additionButton" layoutX="100.0" layoutY="104.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" text="+" onAction="#additionButtonClicked"/>
+        <Button fx:id="subtractionButton" layoutX="100.0" layoutY="161.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" text="-" onAction="#subtractionButtonClicked"/>
+        <Button fx:id="divisionButton" layoutX="159.0" layoutY="104.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" text="÷" onAction="#divisionButtonClicked"/>
+        <Button fx:id="multiplicationButton" layoutX="159.0" layoutY="161.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" text="x" textFill="#696868" onAction="#multiplicationButtonClicked"/>
+        <Button fx:id="squaredbutton" layoutX="99.0" layoutY="271.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="110.0" text="^2" onAction="#squaredButtonClicked"/>
+        <Button fx:id="squareRootButton" layoutX="99.0" layoutY="215.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="110.0" text="√" onAction="#squareRootButtonClicked"/>
       </children>
     </AnchorPane>
   </children>
