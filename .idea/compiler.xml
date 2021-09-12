@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Quaternary" />
+        <module name="Calculator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Calculator" target="16" />
       <module name="Quaternary" target="16" />
     </bytecodeTargetLevel>
   </component>

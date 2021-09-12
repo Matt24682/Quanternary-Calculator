@@ -4,6 +4,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/../Quaternary/pom.xml" />
+        <option value="$PROJECT_DIR$/Calculator/pom.xml" />
       </list>
     </option>
   </component>
