@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../Quaternary/pom.xml" />
+        <option value="$PROJECT_DIR$/Calculator/pom.xml" />
+      </list>
+    </option>
+  </component>
+ HEAD
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="16" project-jdk-type="JavaSDK" />
+=======
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="openjdk-16" project-jdk-type="JavaSDK" />
+>>>>>>> 43099c802a13eb4444a9e22837da1150aeb0bd10
+</project>
