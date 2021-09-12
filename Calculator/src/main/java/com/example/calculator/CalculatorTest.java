@@ -21,8 +21,29 @@ public class CalculatorTest {
 
     @Test
     public void additionTest(){
-        String expected = "31";
-        String actual = Calculator.addition("15", "16");
+        String expected = "1";
+        String actual = Calculator.addition("0", "1");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void secondAdditionTest(){
+        String expected = "10";
+        String actual = Calculator.addition("3", "1");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void largerValueAdditionTest(){
+        String expected = "2303";
+        String actual = Calculator.addition("1111", "1132");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void sevenDigitAdditionTest(){
+        String expected = "3010220";
+        String actual = Calculator.addition("1230123", "1120031");
         assertEquals(expected, actual);
     }
 
