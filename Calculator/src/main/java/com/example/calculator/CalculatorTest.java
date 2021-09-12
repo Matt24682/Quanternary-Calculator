@@ -46,5 +46,26 @@ public class CalculatorTest {
         String actual = Calculator.division("16", "8");
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void squaredTest(){
+        String expected = "16";
+        String actual = Calculator.square("4");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void perfectSquareRootTest(){
+        String expected = "4";
+        String actual = Calculator.squareRoot("16");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void imperfectSquareRootTest(){
+        String expected = "4";
+        String actual = Calculator.squareRoot("17");
+        assertEquals(expected, actual);
+    }
 }
 

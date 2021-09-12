@@ -31,4 +31,12 @@ public class Calculator {
     public static String division(String firstNum, String secondNum){
         return Integer.toString(Integer.parseInt(firstNum) / Integer.parseInt(secondNum));
     }
+
+    public static String square(String number){
+        return Integer.toString((int)Math.pow(Integer.parseInt(number), 2));
+    }
+
+    public static String squareRoot(String number){
+        return Integer.toString((int)Math.floor(Math.sqrt(Integer.parseInt(number))));
+    }
 }
