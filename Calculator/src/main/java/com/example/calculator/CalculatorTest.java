@@ -49,8 +49,29 @@ public class CalculatorTest {
 
     @Test
     public void subtractionTest(){
-        String expected = "22";
-        String actual = Calculator.subtraction("30", "8");
+        String expected = "3";
+        String actual = Calculator.subtraction("10", "1");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void secondSubtractionTest(){
+        String expected = "32";
+        String actual = Calculator.subtraction("33", "1");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void largerSubtractionTest(){
+        String expected = "2130";
+        String actual = Calculator.subtraction("3323", "1133");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void sevenDigitSubtractionTest(){
+        String expected = "33120";
+        String actual = Calculator.subtraction("1231230", "1132110");
         assertEquals(expected, actual);
     }
 

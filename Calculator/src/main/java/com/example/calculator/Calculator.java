@@ -21,7 +21,7 @@ public class Calculator {
     }
 
     public static String subtraction(String firstNum, String secondNum){
-        return Integer.toString(Integer.parseInt(firstNum) - Integer.parseInt(secondNum));
+        return Calculator.ConversionToQuaternary(Integer.toString(Integer.parseInt(Calculator.ConversionToStandard(firstNum)) - Integer.parseInt(Calculator.ConversionToStandard(secondNum))));
     }
 
     public static String multiplication(String firstNum, String secondNum){
