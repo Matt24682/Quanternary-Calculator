@@ -165,7 +165,11 @@ public class fxController {
             userInput.replace(0, userInput.length(), "0");
 
         }else if (userInput.toString().contains("²")) {
-            answerLabel.setText("Not operational variable yet.");
+            String stringInput = userInput.toString();
+            String firstValue = stringInput.substring(0,stringInput.length()-1);
+            String finalValue = Calculator.square(firstValue);
+            answerLabel.setText(finalValue);
+            userInput.replace(0, userInput.length(), "0");
         }
 
     }
