@@ -77,36 +77,36 @@ public class CalculatorTest {
 
     @Test
     public void multiplicationTest(){
-        String expected = "18";
-        String actual = Calculator.multiplication("6", "3");
+        String expected = "102";
+        String actual = Calculator.multiplication("12", "3");
         assertEquals(expected, actual);
     }
 
     @Test
     public void divisionTest(){
         String expected = "2";
-        String actual = Calculator.division("16", "8");
+        String actual = Calculator.division("100", "20");
         assertEquals(expected, actual);
     }
 
     @Test
     public void squaredTest(){
-        String expected = "16";
-        String actual = Calculator.square("4");
+        String expected = "100";
+        String actual = Calculator.square("10");
         assertEquals(expected, actual);
     }
 
     @Test
     public void perfectSquareRootTest(){
-        String expected = "4";
-        String actual = Calculator.squareRoot("16");
+        String expected = "10";
+        String actual = Calculator.squareRoot("100");
         assertEquals(expected, actual);
     }
 
     @Test
     public void imperfectSquareRootTest(){
-        String expected = "4";
-        String actual = Calculator.squareRoot("17");
+        String expected = "10";
+        String actual = Calculator.squareRoot("101");
         assertEquals(expected, actual);
     }
 }

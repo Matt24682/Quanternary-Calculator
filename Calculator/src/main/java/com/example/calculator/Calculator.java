@@ -25,18 +25,18 @@ public class Calculator {
     }
 
     public static String multiplication(String firstNum, String secondNum){
-        return Integer.toString(Integer.parseInt(firstNum) * Integer.parseInt(secondNum));
+        return Calculator.ConversionToQuaternary(Integer.toString(Integer.parseInt(Calculator.ConversionToStandard(firstNum)) * Integer.parseInt(Calculator.ConversionToStandard(secondNum))));
     }
 
     public static String division(String firstNum, String secondNum){
-        return Integer.toString(Integer.parseInt(firstNum) / Integer.parseInt(secondNum));
+        return Calculator.ConversionToQuaternary(Integer.toString(Integer.parseInt(Calculator.ConversionToStandard(firstNum)) / Integer.parseInt(Calculator.ConversionToStandard(secondNum))));
     }
 
     public static String square(String number){
-        return Integer.toString((int)Math.pow(Integer.parseInt(number), 2));
+        return Calculator.ConversionToQuaternary(Integer.toString((int)Math.pow(Integer.parseInt(Calculator.ConversionToStandard(number)), 2)));
     }
 
     public static String squareRoot(String number){
-        return Integer.toString((int)Math.floor(Math.sqrt(Integer.parseInt(number))));
+        return Calculator.ConversionToQuaternary(Integer.toString((int)Math.floor(Math.sqrt(Integer.parseInt(Calculator.ConversionToStandard(number))))));
     }
 }
