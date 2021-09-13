@@ -1,14 +1,18 @@
 package com.example.calculator;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class fxController {
     // Temp examples
 
     @FXML
     private Label answerLabel;
+
+    private final StringBuilder userInput= new StringBuilder();
 
 //BUTTONS
     @FXML
@@ -19,43 +23,47 @@ public class fxController {
 
     @FXML
     protected void button0Clicked(){
-        answerLabel.setText("Button0 clicked");
+        userInput.append("0");
+        answerLabel.setText(userInput.toString());
 
     }
     @FXML
     protected void button1Clicked(){
-        answerLabel.setText("Button1 clicked");
+        userInput.append("1");
+        answerLabel.setText(userInput.toString());
 
     }
     @FXML
     protected void button2Clicked(){
-        answerLabel.setText("Button2 clicked");
+        userInput.append("2");
+        answerLabel.setText(userInput.toString());
 
     }
     @FXML
     protected void button3Clicked(){
-        answerLabel.setText("Button3 clicked");
+        userInput.append("3");
+        answerLabel.setText(userInput.toString());
 //END BUTTONS - START MATH WITH 2 OBJECTS
     }
     @FXML
     protected void additionButtonClicked(){
-        answerLabel.setText("addition clicked");
-
+        userInput.append("+");
+        answerLabel.setText(userInput.toString());
     }
     @FXML
     protected void subtractionButtonClicked(){
-        answerLabel.setText("subtraction clicked");
-
+        userInput.append("-");
+        answerLabel.setText(userInput.toString());
     }
     @FXML
     protected void multiplicationButtonClicked(){
-        answerLabel.setText("multiplication clicked");
-
+        userInput.append("x");
+        answerLabel.setText(userInput.toString());
     }
     @FXML
     protected void divisionButtonClicked(){
-        answerLabel.setText("division clicked");
-
+        userInput.append("÷");
+        answerLabel.setText(userInput.toString());
     }
     //END MATH WITH 2 OBJECTS - START MATH WITH SINGLE OBJECT
 
@@ -72,7 +80,17 @@ public class fxController {
 
     @FXML
     protected void calculateButtonClicked(){
-        answerLabel.setText("calculate clicked");
+        if (userInput.toString().contains("+")) {
+            String stringInput = userInput.toString();
+            String[] splitString = stringInput.split("[+=]");
+            List<String> listString = Arrays.stream(splitString).toList();
+            String firstValue = listString.get(0);
+            String secondValue = listString.get(1);
+            String finalValue = Calculator.addition(firstValue, secondValue);
+            answerLabel.setText(finalValue);
+            userInput.delete(0, userInput.length());
+
+        }
 
     }
 
