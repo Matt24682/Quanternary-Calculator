@@ -85,12 +85,17 @@ public class fxController {
 
     @FXML
     protected void squareRootButtonClicked(){
-        answerLabel.setText("square Root clicked");
+        String prevUserInput = answerLabel.getText();
+        userInput.delete(0,userInput.length());
+        userInput.append("√");
+        userInput.append(prevUserInput);
+        answerLabel.setText(userInput.toString());
 
     }
     @FXML
     protected void squaredButtonClicked(){
-        answerLabel.setText("Squared clicked");
+        userInput.append("²");
+        answerLabel.setText(userInput.toString());
 
     }
 
@@ -123,6 +128,7 @@ public class fxController {
             String finalValue = Calculator.subtraction(firstValue, secondValue);
             answerLabel.setText(finalValue);
             userInput.replace(0, userInput.length(), "0");
+
         }else if (userInput.toString().contains("x")){
             char lastChar = userInput.charAt(userInput.length()-1);
             if (lastChar=='x'){
@@ -136,6 +142,7 @@ public class fxController {
             String finalValue = Calculator.multiplication(firstValue, secondValue);
             answerLabel.setText(finalValue);
             userInput.replace(0, userInput.length(), "0");
+
         }else if (userInput.toString().contains("÷")) {
             char lastChar = userInput.charAt(userInput.length()-1);
             if (lastChar=='÷'){
@@ -149,8 +156,15 @@ public class fxController {
             String finalValue = Calculator.division(firstValue, secondValue);
             answerLabel.setText(finalValue);
             userInput.replace(0, userInput.length(), "0");
-        }
-        else {
+
+        }else if (userInput.toString().contains("√")) {
+            String stringInput = userInput.toString();
+            String firstValue = stringInput.substring(1);
+            String finalValue = Calculator.squareRoot(firstValue);
+            answerLabel.setText(finalValue);
+            userInput.replace(0, userInput.length(), "0");
+
+        }else if (userInput.toString().contains("²")) {
             answerLabel.setText("Not operational variable yet.");
         }
 
