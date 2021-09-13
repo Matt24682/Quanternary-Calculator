@@ -123,7 +123,21 @@ public class fxController {
             String finalValue = Calculator.subtraction(firstValue, secondValue);
             answerLabel.setText(finalValue);
             userInput.replace(0, userInput.length(), "0");
-        }else {
+        }else if (userInput.toString().contains("x")){
+            char lastChar = userInput.charAt(userInput.length()-1);
+            if (lastChar=='x'){
+                userInput.append("0");
+            }
+            String stringInput = userInput.toString();
+            String[] splitString = stringInput.split("[x=]");
+            List<String> listString = Arrays.stream(splitString).toList();
+            String firstValue = listString.get(0);
+            String secondValue = listString.get(1);
+            String finalValue = Calculator.multiplication(firstValue, secondValue);
+            answerLabel.setText(finalValue);
+            userInput.replace(0, userInput.length(), "0");
+        }
+        else {
             answerLabel.setText("Not operational variable yet.");
         }
 
