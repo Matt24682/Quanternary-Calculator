@@ -90,6 +90,17 @@ public class fxController {
             answerLabel.setText(finalValue);
             userInput.delete(0, userInput.length());
 
+        }else if (userInput.toString().contains("-")){
+            String stringInput = userInput.toString();
+            String[] splitString = stringInput.split("[-=]");
+            List<String> listString = Arrays.stream(splitString).toList();
+            String firstValue = listString.get(0);
+            String secondValue = listString.get(1);
+            String finalValue = Calculator.subtraction(firstValue, secondValue);
+            answerLabel.setText(finalValue);
+            userInput.delete(0, userInput.length());
+        }else {
+            answerLabel.setText("Not operational variable yet.");
         }
 
     }
