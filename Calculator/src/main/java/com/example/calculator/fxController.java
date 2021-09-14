@@ -14,11 +14,20 @@ public class fxController {
 
     private final StringBuilder userInput= new StringBuilder("0");
 
+    private Boolean isToggled = false;
+
 //BUTTONS
     @FXML
     protected void toggleButtonClicked(){
-        answerLabel.setText("Toggle Clicked");
-
+        if (isToggled == false){
+            String Converted = Calculator.ConversionToStandard(answerLabel.getText());
+            answerLabel.setText(Converted);
+            isToggled = true;
+        }else{
+            String Converted = Calculator.ConversionToQuaternary(answerLabel.getText());
+            answerLabel.setText(Converted);
+            isToggled = false;
+        }
 }
 
     @FXML
@@ -27,6 +36,7 @@ public class fxController {
         userInput.delete(0, userInput.length());
         userInput.append("0");
         answerLabel.setText(userInput.toString());
+        isToggled = false;
     }
 
     @FXML
@@ -179,6 +189,8 @@ public class fxController {
             answerLabel.setText(finalValue);
             userInput.replace(0, userInput.length(), "0");
         }
+
+        isToggled = false;
 
     }
 
