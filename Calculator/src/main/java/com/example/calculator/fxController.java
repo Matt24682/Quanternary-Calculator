@@ -1,6 +1,7 @@
 package com.example.calculator;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import java.util.Arrays;
@@ -11,6 +12,20 @@ public class fxController {
 
     @FXML
     private Label answerLabel;
+    @FXML
+    private Button toggleUnitButton;
+    @FXML
+    private Button additionButton;
+    @FXML
+    private Button subtractionButton;
+    @FXML
+    private Button divisionButton;
+    @FXML
+    private Button multiplicationButton;
+    @FXML
+    private Button squaredbutton;
+    @FXML
+    private Button squareRootButton;
 
     private final StringBuilder userInput= new StringBuilder("0");
 
@@ -37,6 +52,7 @@ public class fxController {
         userInput.append("0");
         answerLabel.setText(userInput.toString());
         isToggled = false;
+        toggleDisableOperationButtons(false);
     }
 
     @FXML
@@ -77,27 +93,44 @@ public class fxController {
         }
         userInput.append("3");
         answerLabel.setText(userInput.toString());
-//END BUTTONS - START MATH WITH 2 OBJECTS
     }
+
+    protected void toggleDisableOperationButtons(Boolean state){
+        toggleUnitButton.setDisable(state);
+        additionButton.setDisable(state);
+        subtractionButton.setDisable(state);
+        divisionButton.setDisable(state);
+        multiplicationButton.setDisable(state);
+        squaredbutton.setDisable(state);
+        squareRootButton.setDisable(state);
+
+    }
+
+//END BUTTONS - START MATH WITH 2 OBJECTS
+
     @FXML
     protected void additionButtonClicked(){
         userInput.append("+");
         answerLabel.setText(userInput.toString());
+        toggleDisableOperationButtons(true);
     }
     @FXML
     protected void subtractionButtonClicked(){
         userInput.append("-");
         answerLabel.setText(userInput.toString());
+        toggleDisableOperationButtons(true);
     }
     @FXML
     protected void multiplicationButtonClicked(){
         userInput.append("x");
         answerLabel.setText(userInput.toString());
+        toggleDisableOperationButtons(true);
     }
     @FXML
     protected void divisionButtonClicked(){
         userInput.append("÷");
         answerLabel.setText(userInput.toString());
+        toggleDisableOperationButtons(true);
     }
     //END MATH WITH 2 OBJECTS - START MATH WITH SINGLE OBJECT
 
@@ -107,13 +140,19 @@ public class fxController {
         userInput.delete(0,userInput.length());
         userInput.append("√");
         userInput.append(prevUserInput);
+        if (userInput.toString().contains("A")){
+            userInput.delete(1, userInput.length());
+            userInput.append("0");
+        }
         answerLabel.setText(userInput.toString());
+        toggleDisableOperationButtons(true);
 
     }
     @FXML
     protected void squaredButtonClicked(){
         userInput.append("²");
         answerLabel.setText(userInput.toString());
+        toggleDisableOperationButtons(true);
 
     }
 
@@ -176,15 +215,11 @@ public class fxController {
             userInput.replace(0, userInput.length(), "0");
 
         }else if (userInput.toString().contains("√")) {
-            String prevUserInput = answerLabel.getText();
-            userInput.delete(0,userInput.length());
-            userInput.append("√");
-            userInput.append(prevUserInput);
-            if (userInput.toString().contains("A")){
-                userInput.delete(1, userInput.length());
-                userInput.append("0");
-            }
-            answerLabel.setText(userInput.toString());
+            String stringInput = userInput.toString();
+            String firstValue = stringInput.substring(1);
+            String finalValue = Calculator.squareRoot(firstValue);
+            answerLabel.setText(finalValue);
+            userInput.replace(0, userInput.length(), "0");
 
         }else if (userInput.toString().contains("²")) {
             String stringInput = userInput.toString();
@@ -193,7 +228,7 @@ public class fxController {
             answerLabel.setText(finalValue);
             userInput.replace(0, userInput.length(), "0");
         }
-
+        toggleDisableOperationButtons(false);
         isToggled = false;
 
     }
