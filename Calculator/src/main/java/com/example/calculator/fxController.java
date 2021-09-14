@@ -22,6 +22,14 @@ public class fxController {
 }
 
     @FXML
+    protected void clearButtonClicked(){
+
+        userInput.delete(0, userInput.length());
+        userInput.append("0");
+        answerLabel.setText(userInput.toString());
+    }
+
+    @FXML
     protected void button0Clicked(){
         String firstValue = userInput.toString();
         if (firstValue.equals("0")){
