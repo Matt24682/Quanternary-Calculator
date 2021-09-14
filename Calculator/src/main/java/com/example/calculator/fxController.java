@@ -176,11 +176,15 @@ public class fxController {
             userInput.replace(0, userInput.length(), "0");
 
         }else if (userInput.toString().contains("√")) {
-            String stringInput = userInput.toString();
-            String firstValue = stringInput.substring(1);
-            String finalValue = Calculator.squareRoot(firstValue);
-            answerLabel.setText(finalValue);
-            userInput.replace(0, userInput.length(), "0");
+            String prevUserInput = answerLabel.getText();
+            userInput.delete(0,userInput.length());
+            userInput.append("√");
+            userInput.append(prevUserInput);
+            if (userInput.toString().contains("A")){
+                userInput.delete(1, userInput.length());
+                userInput.append("0");
+            }
+            answerLabel.setText(userInput.toString());
 
         }else if (userInput.toString().contains("²")) {
             String stringInput = userInput.toString();
