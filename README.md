@@ -29,6 +29,19 @@
 ###Matthew Johnson = Implement addition and subtraction tests.
 ###Matthew Johnson = Implement UI number buttons, addition button, and subtraction button functionality.
 ###Matthew Johnson = Implement toggle button (particularly when converting with operations involved).
+###Matthew Johnson = Gave description of Meetings and included project screenshots in the Readme file.
+
+###Annie Peabody = Implemented function to convert quaternary to decimal.
+###Annie Peabody = Implemented function to convert decimal to quaternary.
+###Annie Peabody = Implemented tests to make sure conversion functions worked properly.
+
+###Curtis Clemmons = Implemented the clear button to remove all the user's input.
+###Curtis Clemmons = Implemented the toggle button to convert to and from quaternary.
+
+###Ethan Bowers = Set up function to calculate operation functions (primarily focused in decimal).
+###Ethan Bowers = Set up multiplication, division, square and square root functions to work with quaternary numbers.
+###Ethan Bowers = Implemented quaternary tests to make sure multiplication, division, square, and square root functions work properly.
+
 
 ##Meetings
 ###Unfortunately due to varying class and work schedules, we were unable to meet for a full team meeting. We also did not meet up with parts of the group.
