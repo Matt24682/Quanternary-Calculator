@@ -393,6 +393,7 @@ public class fxController {
         }
         toggleDisableOperationButtons(false);
         toggleDisableNumbersButtons(false);
+        toggleDisableConvertButton(false);
         isToggled = false;
 
     }

@@ -28,7 +28,7 @@
 ###Matthew Johnson = Addition and subtraction functions work with quaternary numbers.
 ###Matthew Johnson = Implement addition and subtraction tests.
 ###Matthew Johnson = Implement UI number buttons, addition button, and subtraction button functionality.
-###Matthew Johnson = Implement toggle button (particularly when converting with operations involved).
+###Matthew Johnson = Implement toggle button (particularly to work when converting with operations involved).
 ###Matthew Johnson = Gave description of Meetings and included project screenshots in the Readme file.
 
 ###Annie Peabody = Implemented function to convert quaternary to decimal.
@@ -42,8 +42,12 @@
 ###Ethan Bowers = Set up multiplication, division, square and square root functions to work with quaternary numbers.
 ###Ethan Bowers = Implemented quaternary tests to make sure multiplication, division, square, and square root functions work properly.
 
-###Austin Belt = integrated multiplication, division, square root, and square operation functions with GUI elements
+###Austin Belt = Integrated multiplication, division, square root, and square operation functions with GUI elements
 ###Austin Belt = Implemented functions to disable and re-enable GUI buttons under certain conditions
+
+###Isaac Pearson = Designed the appearance of the calculator.
+###Isaac Pearson = Created the UI.
+###Isaac Pearson = Connected FXML label and buttons to the fxController so that the buttons can be made functional.
 
 ##Meetings
 ###Unfortunately due to varying class and work schedules, we were unable to meet for a full team meeting. We also did not meet up with parts of the group.
