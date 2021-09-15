@@ -26,6 +26,14 @@ public class fxController {
     private Button squaredbutton;
     @FXML
     private Button squareRootButton;
+    @FXML
+    private Button button0;
+    @FXML
+    private Button button1;
+    @FXML
+    private Button button2;
+    @FXML
+    private Button button3;
 
     private final StringBuilder userInput= new StringBuilder("0");
 
@@ -53,6 +61,7 @@ public class fxController {
         answerLabel.setText(userInput.toString());
         isToggled = false;
         toggleDisableOperationButtons(false);
+        toggleDisableNumbersButtons(false);
     }
 
     @FXML
@@ -106,6 +115,13 @@ public class fxController {
 
     }
 
+    protected void toggleDisableNumbersButtons(Boolean state){
+        button0.setDisable(state);
+        button1.setDisable(state);
+        button2.setDisable(state);
+        button3.setDisable(state);
+    }
+
 //END BUTTONS - START MATH WITH 2 OBJECTS
 
     @FXML
@@ -153,6 +169,7 @@ public class fxController {
         userInput.append("²");
         answerLabel.setText(userInput.toString());
         toggleDisableOperationButtons(true);
+        toggleDisableNumbersButtons(true);
 
     }
 
@@ -227,8 +244,10 @@ public class fxController {
             String finalValue = Calculator.square(firstValue);
             answerLabel.setText(finalValue);
             userInput.replace(0, userInput.length(), "0");
+
         }
         toggleDisableOperationButtons(false);
+        toggleDisableNumbersButtons(false);
         isToggled = false;
 
     }
