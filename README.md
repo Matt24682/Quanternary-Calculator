@@ -1,4 +1,4 @@
-# Quanternary-Calculator
+# Quaternary-Calculator
 
 ###Project Screenshots
 
