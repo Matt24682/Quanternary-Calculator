@@ -3,19 +3,19 @@
 ##Project Screenshots
 
 ###Initial startup of program:
-![](images/github.program_startup.png)
+![](images/program_startup.png)
 
 ###Entering quaternary values:
-![](images/github.quaternary_values_entered.png)
+![](images/quaternary_values_entered.png)
 
 ###Converting values to decimal:
-![](images/github.decimal_values.png)
+![](images/decimal_values.png)
 
 ###Result of the operation:
-![](images/github.quaternary_result_value.png)
+![](images/quaternary_result_value.png)
 
 ###Quaternary result converted to decimal:
-![](images/github.standard_final_result.png)
+![](images/standard_final_result.png)
 
 ##Project Manual
 
