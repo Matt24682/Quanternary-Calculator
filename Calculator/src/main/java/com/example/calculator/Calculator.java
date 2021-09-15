@@ -29,7 +29,12 @@ public class Calculator {
     }
 
     public static String division(String firstNum, String secondNum){
-        return Calculator.ConversionToQuaternary(Integer.toString(Integer.parseInt(Calculator.ConversionToStandard(firstNum)) / Integer.parseInt(Calculator.ConversionToStandard(secondNum))));
+        try{
+            return Calculator.ConversionToQuaternary(Integer.toString(Integer.parseInt(Calculator.ConversionToStandard(firstNum)) / Integer.parseInt(Calculator.ConversionToStandard(secondNum))));
+        }
+        catch(ArithmeticException e) {
+            return "Divide by zero!";
+        }
     }
 
     public static String square(String number){
