@@ -42,6 +42,8 @@
 ###Ethan Bowers = Set up multiplication, division, square and square root functions to work with quaternary numbers.
 ###Ethan Bowers = Implemented quaternary tests to make sure multiplication, division, square, and square root functions work properly.
 
+###Austin Belt = integrated multiplication, division, square root, and square operation functions with GUI elements
+###Austin Belt = Implemented functions to disable and re-enable GUI buttons under certain conditions
 
 ##Meetings
 ###Unfortunately due to varying class and work schedules, we were unable to meet for a full team meeting. We also did not meet up with parts of the group.
