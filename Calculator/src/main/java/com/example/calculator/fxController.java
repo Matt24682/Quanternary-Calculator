@@ -8,12 +8,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class fxController {
-    // Temp examples
 
     @FXML
     private Label answerLabel;
-    @FXML
-    private Button toggleUnitButton;
     @FXML
     private Button additionButton;
     @FXML
@@ -42,10 +39,85 @@ public class fxController {
 //BUTTONS
     @FXML
     protected void toggleButtonClicked(){
-        if (isToggled == false){
-            String Converted = Calculator.ConversionToStandard(answerLabel.getText());
-            answerLabel.setText(Converted);
-            isToggled = true;
+        if (!isToggled){
+            if (userInput.toString().contains("+")||userInput.toString().contains("-")
+                    ||userInput.toString().contains("x")||userInput.toString().contains("÷")) {
+                String stringInput = userInput.toString();
+                String[] splitString = stringInput.split("[+x÷-]");
+                List<String> listString = Arrays.stream(splitString).toList();
+                String firstValue = listString.get(0);
+                String secondValue = listString.get(1);
+                String convertedFirstValue = Calculator.ConversionToStandard(firstValue);
+                String convertedSecondValue = Calculator.ConversionToStandard(secondValue);
+                if (userInput.toString().contains("+")) {
+                    userInput.delete(0, userInput.length());
+                    userInput.append(convertedFirstValue).append("+").append(convertedSecondValue);
+                    answerLabel.setText(userInput.toString());
+                    String returnedQuaternaryFirstValue=Calculator.ConversionToQuaternary(convertedFirstValue);
+                    String returnedQuaternarySecondValue=Calculator.ConversionToQuaternary(convertedSecondValue);
+                    userInput.delete(0, userInput.length());
+                    userInput.append(returnedQuaternaryFirstValue).append("+").append(returnedQuaternarySecondValue);
+
+                }else if (userInput.toString().contains("-")){
+                    userInput.delete(0,userInput.length());
+                    userInput.append(convertedFirstValue).append("-").append(convertedSecondValue);
+                    answerLabel.setText(userInput.toString());
+                    String returnedQuaternaryFirstValue=Calculator.ConversionToQuaternary(convertedFirstValue);
+                    String returnedQuaternarySecondValue=Calculator.ConversionToQuaternary(convertedSecondValue);
+                    userInput.delete(0, userInput.length());
+                    userInput.append(returnedQuaternaryFirstValue).append("-").append(returnedQuaternarySecondValue);
+
+                }else if (userInput.toString().contains("x")){
+                    userInput.delete(0,userInput.length());
+                    userInput.append(convertedFirstValue).append("x").append(convertedSecondValue);
+                    answerLabel.setText(userInput.toString());
+                    String returnedQuaternaryFirstValue=Calculator.ConversionToQuaternary(convertedFirstValue);
+                    String returnedQuaternarySecondValue=Calculator.ConversionToQuaternary(convertedSecondValue);
+                    userInput.delete(0, userInput.length());
+                    userInput.append(returnedQuaternaryFirstValue).append("x").append(returnedQuaternarySecondValue);
+
+                }else if (userInput.toString().contains("÷")) {
+                    userInput.delete(0,userInput.length());
+                    userInput.append(convertedFirstValue).append("÷").append(convertedSecondValue);
+                    answerLabel.setText(userInput.toString());
+                    String returnedQuaternaryFirstValue=Calculator.ConversionToQuaternary(convertedFirstValue);
+                    String returnedQuaternarySecondValue=Calculator.ConversionToQuaternary(convertedSecondValue);
+                    userInput.delete(0, userInput.length());
+                    userInput.append(returnedQuaternaryFirstValue).append("÷").append(returnedQuaternarySecondValue);
+
+                }
+
+            }else if (userInput.toString().contains("√")||userInput.toString().contains("²")){
+                String stringInput = userInput.toString();
+                String[] splitString = stringInput.split("[√²]");
+                List<String> listString = Arrays.stream(splitString).toList();
+                if (userInput.toString().contains("√")){
+                    String value = listString.get(1);
+                    String standardValue = Calculator.ConversionToStandard(value);
+                    userInput.delete(0,userInput.length());
+                    userInput.append("√").append(standardValue);
+                    answerLabel.setText(userInput.toString());
+                    String quaternaryValue=Calculator.ConversionToQuaternary(standardValue);
+                    userInput.delete(0, userInput.length());
+                    userInput.append("√").append(quaternaryValue);
+
+                }else if (userInput.toString().contains("²")){
+                    String value = listString.get(0);
+                    String standardValue = Calculator.ConversionToStandard(value);
+                    userInput.delete(0,userInput.length());
+                    userInput.append(standardValue).append("²");
+                    answerLabel.setText(userInput.toString());
+                    String quaternaryValue=Calculator.ConversionToQuaternary(standardValue);
+                    userInput.delete(0, userInput.length());
+                    userInput.append(quaternaryValue).append("²");
+                }
+
+            }else{
+                String Converted = Calculator.ConversionToStandard(answerLabel.getText());
+                answerLabel.setText(Converted);
+                isToggled = true;
+            }
+
         }else{
             String Converted = Calculator.ConversionToQuaternary(answerLabel.getText());
             answerLabel.setText(Converted);
@@ -105,7 +177,6 @@ public class fxController {
     }
 
     protected void toggleDisableOperationButtons(Boolean state){
-        toggleUnitButton.setDisable(state);
         additionButton.setDisable(state);
         subtractionButton.setDisable(state);
         divisionButton.setDisable(state);
@@ -146,7 +217,6 @@ public class fxController {
     protected void divisionButtonClicked(){
         userInput.append("÷");
         answerLabel.setText(userInput.toString());
-        toggleDisableOperationButtons(true);
     }
     //END MATH WITH 2 OBJECTS - START MATH WITH SINGLE OBJECT
 
@@ -173,6 +243,7 @@ public class fxController {
 
     }
 
+    //END MATH WITH SINGLE OBJECT - START CALCULATION OF OBJECT(S)
     @FXML
     protected void calculateButtonClicked(){
         if (userInput.toString().contains("+")) {
