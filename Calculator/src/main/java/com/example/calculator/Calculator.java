@@ -33,7 +33,7 @@ public class Calculator {
             return Calculator.ConversionToQuaternary(Integer.toString(Integer.parseInt(Calculator.ConversionToStandard(firstNum)) / Integer.parseInt(Calculator.ConversionToStandard(secondNum))));
         }
         catch(ArithmeticException e) {
-            return "Divide by zero!";
+            return "Division by zero!";
         }
     }
 

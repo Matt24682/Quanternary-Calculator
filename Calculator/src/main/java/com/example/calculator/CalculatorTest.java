@@ -92,7 +92,7 @@ public class CalculatorTest {
     @Test
     public void divideByZeroTest()
     {
-        String expected = "Divide by zero!";
+        String expected = "Division by zero!";
         String actual = Calculator.division("100", "0");
         assertEquals(expected, actual);
     }

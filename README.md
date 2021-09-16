@@ -24,6 +24,15 @@
 
 ##Dependencies
 
+###-Java SDK 16
+###-OpenJFX - JavaFX-FXML
+###-OpenJFX - JavaFX-Graphics
+###-OpenJFX - JavaFX-Controls
+###-JUnit 4.13-Beta-3
+###-JUnit Jupiter Engine/API
+
+###Dependencies can be found in the pom.xml file.
+
 
 
 ##Task Distribution
