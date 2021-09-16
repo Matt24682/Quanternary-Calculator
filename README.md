@@ -19,7 +19,12 @@
 
 ##Project Manual
 
+###To run the project, go into the Main class, click the triangle next to the main function, and finally select "run Main.main()". This should start the calculator.
+###Once the calculator appears on the screen, the user can select various numbers and operations during which the user can convert them over to there decimal values. Note that the user can only use one operation at a time
+
 ##Dependencies
+
+
 
 ##Task Distribution
 

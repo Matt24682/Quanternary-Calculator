@@ -64,21 +64,37 @@ public class fxController {
                 userInput.delete(0, userInput.length());
                 userInput.append(convertedFirstValue).append("+").append(convertedSecondValue);
                 answerLabel.setText(userInput.toString());
+                isToggled=true;
+                toggleDisableNumbersButtons(true);
+                toggleDisableOperationButtons(true);
+                toggleDisableCalculateButton(true);
 
             }else if (userInput.toString().contains("-")){
                 userInput.delete(0,userInput.length());
                 userInput.append(convertedFirstValue).append("-").append(convertedSecondValue);
                 answerLabel.setText(userInput.toString());
+                isToggled=true;
+                toggleDisableNumbersButtons(true);
+                toggleDisableOperationButtons(true);
+                toggleDisableCalculateButton(true);
 
             }else if (userInput.toString().contains("x")){
                 userInput.delete(0,userInput.length());
                 userInput.append(convertedFirstValue).append("x").append(convertedSecondValue);
                 answerLabel.setText(userInput.toString());
+                isToggled=true;
+                toggleDisableNumbersButtons(true);
+                toggleDisableOperationButtons(true);
+                toggleDisableCalculateButton(true);
 
             }else if (userInput.toString().contains("÷")) {
                 userInput.delete(0,userInput.length());
                 userInput.append(convertedFirstValue).append("÷").append(convertedSecondValue);
                 answerLabel.setText(userInput.toString());
+                isToggled=true;
+                toggleDisableNumbersButtons(true);
+                toggleDisableOperationButtons(true);
+                toggleDisableCalculateButton(true);
 
             }
 
@@ -92,6 +108,10 @@ public class fxController {
                 userInput.delete(0,userInput.length());
                 userInput.append("√").append(standardValue);
                 answerLabel.setText(userInput.toString());
+                isToggled=true;
+                toggleDisableNumbersButtons(true);
+                toggleDisableOperationButtons(true);
+                toggleDisableCalculateButton(true);
 
 
             }else if (userInput.toString().contains("²")){
@@ -100,17 +120,24 @@ public class fxController {
                 userInput.delete(0,userInput.length());
                 userInput.append(standardValue).append("²");
                 answerLabel.setText(userInput.toString());
-
+                isToggled=true;
+                toggleDisableNumbersButtons(true);
+                toggleDisableOperationButtons(true);
+                toggleDisableCalculateButton(true);
             }
 
         }else{
-            String Converted = Calculator.ConversionToStandard(answerLabel.getText());
-            answerLabel.setText(Converted);
+            if (answerLabel.getText().equals("Answer")||answerLabel.getText().equals("Clear or Convert!")){
+                answerLabel.setText("Clear or Convert!");
+            }else{
+                String Converted = Calculator.ConversionToStandard(answerLabel.getText());
+                answerLabel.setText(Converted);
+                isToggled=true;
+                toggleDisableNumbersButtons(true);
+                toggleDisableOperationButtons(true);
+                toggleDisableCalculateButton(true);
+            }
         }
-        isToggled=true;
-        toggleDisableNumbersButtons(true);
-        toggleDisableOperationButtons(true);
-        toggleDisableCalculateButton(true);
     }
 
     protected void standardConversionIfStatements(){
@@ -167,9 +194,13 @@ public class fxController {
             }
 
         }else{
-            String Converted = Calculator.ConversionToQuaternary(answerLabel.getText());
-            answerLabel.setText(Converted);
-            toggleDisableOperationButtons(false);
+            if (answerLabel.getText().equals("Answer")||answerLabel.getText().equals("Clear or Convert!")){
+                answerLabel.setText("Clear or Convert!");
+            }else{
+                String Converted = Calculator.ConversionToQuaternary(answerLabel.getText());
+                answerLabel.setText(Converted);
+                toggleDisableOperationButtons(false);
+            }
         }
         isToggled=false;
         if(userInput.toString().contains("²")){
