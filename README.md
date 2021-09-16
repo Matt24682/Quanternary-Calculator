@@ -19,10 +19,16 @@
 
 ##Project Manual
 
-###To run the project, go into the Main class, click the triangle next to the main function, and finally select "run Main.main()". This should start the calculator.
-###Once the calculator appears on the screen, the user can select various numbers and operations during which the user can convert them over to there decimal values. Note that the user can only use one operation at a time
+###To run the project, you will need to go into the Main class, click the green triangle next to the main function, and finally select "run Main.main()". This should start the calculator. Note: The user may have to download and/or configure Java 16 or openjdk-16 before running the program.
+###Once the calculator appears on the screen, the user can select various numbers and operations during which the user can convert them over to their decimal values. Note that the user can only select one operation at a time.
+###The user can run addition, subtraction, multiplication, division, as well as use square and square root quaternary numbers. One way you can tell if the number you are looking at is in quaternary or standard is if the program lets you use the buttons. If it allows you to use the other buttons, it means that the value is in quaternary, and if all buttons except for the convert and clear button is disabled, it means that the values are decimal numbers.
+###The program has a default value set to where if the user doesn't enter a value and selects an operation (particularly for addition, subtraction, multiplication, and division), it will assume that the first value is 0. If the user doesn't enter a second value before selecting calculate, the program will add in a 0 as the second value, and run the calculation.
+###The program also contains a clear button to where if the user accidentally selects a value or operation that they didn't want, they can clear all the values that they have entered and re-enter the value they actually wanted.
+###Finally, when the user is ready to close out of the program, all they have to do is select the X button in the upper right corner of the calculator, and the program will close and finish running.
 
 ##Dependencies
+
+###Program runs using Maven dependencies.
 
 ###-Java SDK 16
 ###-OpenJFX - JavaFX-FXML
