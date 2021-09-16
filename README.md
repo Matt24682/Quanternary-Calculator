@@ -41,8 +41,6 @@
 
 ###Dependencies can be found in the pom.xml file.
 
-
-
 ##Task Distribution
 
 ###Matthew Johnson = Create Repository.
@@ -51,7 +49,7 @@
 ###Matthew Johnson = Implement addition and subtraction tests.
 ###Matthew Johnson = Implement UI number buttons, addition button, and subtraction button functionality.
 ###Matthew Johnson = Implement toggle button (particularly to work when converting with operations involved).
-###Matthew Johnson = Gave description of Meetings and included project screenshots in the Readme file.
+###Matthew Johnson = Gave description of Meetings, created the Project Manual, and included project screenshots in the Readme file.
 
 ###Annie Peabody = Implemented function to convert quaternary to decimal.
 ###Annie Peabody = Implemented function to convert decimal to quaternary.
@@ -66,6 +64,7 @@
 
 ###Austin Belt = Integrated multiplication, division, square root, and square operation functions with GUI elements
 ###Austin Belt = Implemented functions to disable and re-enable GUI buttons under certain conditions
+###Austin Belt = Gave a description of what is used in this program within the Dependencies section of the Readme file.
 
 ###Isaac Pearson = Designed the appearance of the calculator.
 ###Isaac Pearson = Created the UI.
