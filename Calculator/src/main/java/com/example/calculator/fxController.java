@@ -331,7 +331,7 @@ public class fxController {
         userInput.delete(0,userInput.length());
         userInput.append("√");
         userInput.append(prevUserInput);
-        if (userInput.toString().contains("A")){
+        if (userInput.toString().contains("A") | (userInput.toString().contains("D")) | (userInput.toString().contains("C"))){
             userInput.delete(1, userInput.length());
             userInput.append("0");
         }
