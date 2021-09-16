@@ -26,6 +26,8 @@
 ###The program also contains a clear button to where if the user accidentally selects a value or operation that they didn't want, they can clear all the values that they have entered and re-enter the value they actually wanted.
 ###Finally, when the user is ready to close out of the program, all they have to do is select the X button in the upper right corner of the calculator, and the program will close and finish running.
 
+###NOTE: When first downloading the project, if a lot of errors first show up, go through the following path File->Project Structure->Modules and make sure that the module selected is Calculator. If it is not, select Calculator, click apply, and the project should reconfigure itself to correct those errors.
+
 ##Dependencies
 
 ###Program runs using Maven dependencies.
