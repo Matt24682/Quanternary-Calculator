@@ -405,7 +405,7 @@ public class fxController {
             String secondValue = listString.get(1);
             String finalValue = Calculator.division(firstValue, secondValue);
             answerLabel.setText(finalValue);
-            if (finalValue.contains("Divide by zero!")){
+            if (finalValue.contains("Division by zero!")){
                 toggleDisableConvertButton(true);
             }
             userInput.replace(0, userInput.length(), "0");
